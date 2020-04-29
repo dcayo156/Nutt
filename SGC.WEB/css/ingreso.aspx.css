@@ -1,0 +1,80 @@
+﻿div.ingreso_externo {
+    margin: 0 auto;
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+div.ingreso img.logo {
+    margin-top: 10px;
+}
+
+div.ingreso span.leyenda {
+    font-size: 21px;
+    letter-spacing: -0.8px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: block;
+    color: #F15B29;
+}
+
+div.ingreso div.dato {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+    div.ingreso div.dato input {
+        padding: 7px;
+        font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+        border: 1px solid #B0A340;
+        background-color: #fafaf4;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        font-size: 1.2em;
+        width: calc(100% - 16px);
+    }
+
+div.ingreso div.recuperarcontrasena {
+    text-align: right;
+}
+
+    div.ingreso div.recuperarcontrasena a {
+        text-decoration: none;
+        color: #226e04;
+    }
+
+        div.ingreso div.recuperarcontrasena a:hover {
+            text-decoration: underline;
+        }
+
+div.ingreso div.activar {
+    border-top: 1px solid #B0A340;
+    text-align: right;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+    div.ingreso div.activar a {
+        text-decoration: none;
+        color: #226e04;
+    }
+
+        div.ingreso div.activar a:hover {
+            text-decoration: underline;
+        }
+
+div.ingreso #btnIngresar, div.ingreso #btnRecuperarContranena, div.ingreso #btnActivarCuenta {
+    margin-top: 10px;
+    float: right;
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+div.ingreso #btnIngresar2 {
+    display: none;
+}

@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Plantilla.master.cs" Inherits="NUT.WEB.Plantilla" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+    <meta name="viewport" content="width=device-width" />
+
+    <title></title>
+    <link rel="shortcut icon" runat="server" id="lnkFavicon" />
+    <link rel="icon" type="image/vnd.microsoft.icon" runat="server" id="lnkFavicon2" />
+    <asp:ContentPlaceHolder ID="cCss" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="plantilla">
+    <form id="f1" runat="server">
+        <div id="cssmenu">
+            <ul runat="server" id="mnu">
+            </ul>
+            <span id="parametro1000"></span>
+        </div>
+        <div class="cabecera">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="titulo">
+                            <%=this.m_titulo%>
+                        </td>
+                        <td class="leyenda oculto700">
+                            <asp:ContentPlaceHolder ID="cLey" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="contenido">
+            <asp:ContentPlaceHolder ID="c" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!--FIN CONTENIDO-->
+        <script type="text/javascript" src='<%=this.ResolveUrl("~/scripts/ref/comunes.min" + this.Application["version"].ToString() + ".js") %>'></script>
+        <asp:ContentPlaceHolder ID="cScr" runat="server">
+        </asp:ContentPlaceHolder>
+        <input type="text" style="display: none" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask TaskName="AjaxMin" AssemblyFile="$(MSBuildProjectDirectory)\..\DLL\AjaxMinTask.dll" />
+  <Target Name="SetupCustomAcls" AfterTargets="AddIisSettingAndFileContentsToSourceManifest">
+    <!--Minificación JS y CSS-->
+    <ItemGroup>
+      <Js Include="$(_PackageTempDir)\scripts\ref\*.js" />
+      <Css Include="$(_PackageTempDir)\css\*.css" />
+    </ItemGroup>
+    <AjaxMin JsSourceFiles="@(Js)" JsSourceExtensionPattern="\.js$" JsTargetExtension=".js" CssSourceFiles="@(Css)" CssSourceExtensionPattern="\.css$" CssTargetExtension=".css" />
+    <!--Permiso de escritura en carpeta temp-->
+    <MakeDir Directories="$(_MSDeployDirPath_FullPath)\temp" />
+    <ItemGroup>
+      <MsDeploySourceManifest Include="setAcl">
+        <Path>$(_MSDeployDirPath_FullPath)\temp</Path>
+        <setAclAccess>Read,Write,Modify</setAclAccess>
+        <setAclResourceType>Directory</setAclResourceType>
+        <AdditionalProviderSettings>setAclResourceType;setAclAccess</AdditionalProviderSettings>
+      </MsDeploySourceManifest>
+    </ItemGroup>
+  </Target>
+  <Target Name="DeclareCustomParameters" AfterTargets="AddIisAndContentDeclareParametersItems">
+    <ItemGroup>
+      <MsDeployDeclareParameters Include="tempSetAclParam">
+        <Kind>ProviderPath</Kind>
+        <Scope>setAcl</Scope>
+        <Match>^$(_EscapeRegEx_MSDeployDirPath)\\temp</Match>
+        <Description>Add write permission to the temp folder.</Description>
+        <DefaultValue>{$(_MsDeployParameterNameForContentPath)}/temp</DefaultValue>
+        <Value>$(_DestinationContentPath)/temp</Value>
+        <Tags>Hidden</Tags>
+        <Priority>$(VsSetAclPriority)</Priority>
+        <ExcludeFromSetParameter>True</ExcludeFromSetParameter>
+      </MsDeployDeclareParameters>
+    </ItemGroup>
+  </Target>
+</Project>

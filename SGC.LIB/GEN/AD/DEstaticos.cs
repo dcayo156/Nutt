@@ -13,7 +13,7 @@ namespace NUT.LIB.GEN.AD
         #region Consultas
 
         /******** VALOR/REGISTRO ÚNICO *********/
-
+        //alkjhzxckjhxzcl
 
 
         /********** VARIOS REGISTROS ***********/

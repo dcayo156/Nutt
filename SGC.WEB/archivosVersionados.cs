@@ -9,7 +9,7 @@ namespace NUT.WEB
     {
 
         #region IHttpHandler Members
-
+        //Prueba
         public void ProcessRequest(HttpContext context)
         {
             string textoVersion = ConfigurationManager.AppSettings["version"];

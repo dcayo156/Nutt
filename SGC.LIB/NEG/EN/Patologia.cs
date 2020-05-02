@@ -32,6 +32,11 @@ namespace NUT.LIB.NEG.EN
             get { return this.GetValor<int>("Id"); }
             set { this.SetValor("Id", value); }
         }
+        public string Nombre
+        {
+            get { return this.GetValorString("Nombre"); }
+            set { this.SetValor("Nombre", value); }
+        }
         public string CargarEnHistoriaClinica
         {
             get { return this.GetValorString("CargarEnHistoriaClinica"); }
@@ -56,6 +61,7 @@ namespace NUT.LIB.NEG.EN
         {
             this.nombreTabla = TABLA;
             this.datos.Add("Id", new EntidadColumna("Id", null, Convert.ToInt32(DbType.Int32).ToString(), null, null, null, null, 1, 1));
+            this.datos.Add("Nombre", new EntidadColumna("Nombre", null, Convert.ToInt32(DbType.AnsiString).ToString(), null, 50, null, null, 0, 0));
             this.datos.Add("CargarEnHistoriaClinica", new EntidadColumna("CargarEnHistoriaClinica", null, Convert.ToInt32(DbType.AnsiStringFixedLength).ToString(), null, 1, null, null, 0, 0));
             this.datos.Add("Estado", new EntidadColumna("Estado", null, Convert.ToInt32(DbType.Int32).ToString(), null, null, null, null, 0, 0));
             this.datos.Add("EsHabitoFisiologico", new EntidadColumna("EsHabitoFisiologico", null, Convert.ToInt32(DbType.AnsiStringFixedLength).ToString(), null, 1, null, null, 0, 0));

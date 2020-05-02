@@ -52,6 +52,26 @@ namespace NUT.LIB.NEG.EN
             get { return this.GetValorString("EsHabitoFisiologico"); }
             set { this.SetValor("EsHabitoFisiologico", value); }
         }
+        public int? IdUsuReg
+        {
+            get { return this.GetValor<int>("IdUsuReg"); }
+            set { this.SetValor("IdUsuReg", value); }
+        }
+        public DateTime? FecReg
+        {
+            get { return this.GetValor<DateTime>("FecReg"); }
+            set { this.SetValor("FecReg", value); }
+        }
+        public int? IdUsuMod
+        {
+            get { return this.GetValor<int>("IdUsuMod"); }
+            set { this.SetValor("IdUsuMod", value); }
+        }
+        public DateTime? FecMod
+        {
+            get { return this.GetValor<DateTime>("FecMod"); }
+            set { this.SetValor("FecMod", value); }
+        }
 
         #endregion
 
@@ -65,6 +85,10 @@ namespace NUT.LIB.NEG.EN
             this.datos.Add("CargarEnHistoriaClinica", new EntidadColumna("CargarEnHistoriaClinica", null, Convert.ToInt32(DbType.AnsiStringFixedLength).ToString(), null, 1, null, null, 0, 0));
             this.datos.Add("Estado", new EntidadColumna("Estado", null, Convert.ToInt32(DbType.Int32).ToString(), null, null, null, null, 0, 0));
             this.datos.Add("EsHabitoFisiologico", new EntidadColumna("EsHabitoFisiologico", null, Convert.ToInt32(DbType.AnsiStringFixedLength).ToString(), null, 1, null, null, 0, 0));
+            this.datos.Add("IdUsuReg", new EntidadColumna("IdUsuReg", null, Convert.ToInt32(DbType.Int32).ToString(), null, null, null, null, 0, 0));
+            this.datos.Add("FecReg", new EntidadColumna("FecReg", null, Convert.ToInt32(DbType.DateTime).ToString(), null, null, null, null, 0, 0));
+            this.datos.Add("IdUsuMod", new EntidadColumna("IdUsuMod", null, Convert.ToInt32(DbType.Int32).ToString(), null, null, null, null, 0, 0));
+            this.datos.Add("FecMod", new EntidadColumna("FecMod", null, Convert.ToInt32(DbType.DateTime).ToString(), null, null, null, null, 0, 0));
         }
 
         #endregion

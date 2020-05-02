@@ -17,7 +17,10 @@ namespace NUT.LIB.NEG.LO
 
         /******** VALOR/REGISTRO ÚNICO *********/
 
-
+        public static DataSet TraerPatologia(int idPatologia)
+        {
+            return DPatologias.TraerPatologia(idPatologia);
+        }
 
         /********** VARIOS REGISTROS ***********/
 
@@ -46,22 +49,20 @@ namespace NUT.LIB.NEG.LO
 
         #region Transacciones
 
-        public static void RegistrarPatologia(Patologia eUsuario)
-        {
-            //Actualizar la entidad Patologia falta el campo Nombre
-            if (ExisteNombreUsuario("Nombre" , eUsuario.Id.Value))
+        public static void RegistrarPatologia(Patologia ePatologia)
+        {          
+            if (ExisteNombreUsuario(ePatologia.Nombre, ePatologia.Id.Value))
             {
                 throw new LogicaException("La nombre especificado ya pertenece a otra Patologia", "NombreExistente");
             }
             using (TransactionScope ts = new TransactionScope())
             {
-                Insertar(eUsuario);
+                Insertar(ePatologia);
                 ts.Complete();
             }
         }
         public static void ModificarPatologia(Patologia ePatologia)
-        {
-            //Actualizar la entidad Patologia falta el campo Nombre
+        {            
             if (ExisteNombreUsuario("Nombre", ePatologia.Id.Value))
             {
                 throw new LogicaException("La nombre especificado ya pertenece a otra Patologia", "NombreExistente");

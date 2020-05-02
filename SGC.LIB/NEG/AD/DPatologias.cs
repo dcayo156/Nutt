@@ -16,7 +16,11 @@ namespace NUT.LIB.NEG.AD
         #region Consultas
 
         /******** VALOR/REGISTRO ÚNICO *********/
-
+        public static DataSet TraerPatologia(int idPatologia)
+        {
+            return bd.EjecutarConsultaProc("NEG.TraerPatologia",
+                bd.CrearParametro("IdPatologia", idPatologia, DbType.Int32));
+        }
 
 
         /********** VARIOS REGISTROS ***********/
@@ -76,11 +80,7 @@ namespace NUT.LIB.NEG.AD
                 "SELECT COUNT(Id) FROM NEG.HistoriaClinicaPatologia h WHERE h.IdPatologia = {0}",
                 idPatologia))) > 0;
         }
-        public static void EliminarPatologia(int idPatologia)
-        {
-            bd.EjecutarValor(string.Format(@"
-                                            DELETE FROM NEG.Patologia WHERE Id= {0}", idPatologia));
-        }
+
         #endregion
 
         #region Transacciones

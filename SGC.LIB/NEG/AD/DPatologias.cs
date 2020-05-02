@@ -27,9 +27,6 @@ namespace NUT.LIB.NEG.AD
 	                        p.Id,
 	                        p.Nombre,
 	                        p.CargarEnHistoriaClinica,
-	                        CASE p.CargarEnHistoriaClinica 
-			                        WHEN 'S' THEN 'SI'
-			                        WHEN 'N' THEN 'NO' END DescripcionCargarEnHistoriaClinica,
 	                        p.EsHabitoFisiologico,
 	                        p.Estado,
 	                        ee.Descripcion DescripcionEstado
@@ -47,7 +44,7 @@ namespace NUT.LIB.NEG.AD
             if (!string.IsNullOrEmpty(filter.EsHabitoFisiologico))
             {
                 sb.AppendFormat("p.EsHabitoFisiologico = {0} AND   ", bd.ParametroDML("EsHabitoFisiologico"));
-                lPars.Add(bd.CrearParametro("EsHabitoFisiologico", filter.EsHabitoFisiologico, DbType.AnsiString, 50));
+                lPars.Add(bd.CrearParametro("EsHabitoFisiologico", filter.EsHabitoFisiologico, DbType.AnsiString, 1));
             }
             if (filter.Estado > 0)
             {
@@ -69,14 +66,14 @@ namespace NUT.LIB.NEG.AD
         public static bool ExisteNombrePatologia(string Nombre, int idPatologia)
         {
             return Convert.ToInt32(bd.EjecutarValor(string.Format(
-                "SELECT COUNT(*) FROM NEG.Patologia p WHERE p.Nombre = {0} AND u.Id = {1}",
+                "SELECT COUNT(Id) FROM NEG.Patologia p WHERE p.Nombre = {0} AND u.Id = {1}",
                 bd.ParametroDML("Nombre"), idPatologia),
                 bd.CrearParametro("Nombre", Nombre, DbType.AnsiString, 50))) > 0;
         }
         public static bool ExistePatologiaEnHistoriaClinica(int idPatologia)
         {
             return Convert.ToInt32(bd.EjecutarValor(string.Format(
-                "SELECT COUNT(*) FROM NEG.HistoriaClinicaPatologia h WHERE h.IdPatologia = {0}",
+                "SELECT COUNT(Id) FROM NEG.HistoriaClinicaPatologia h WHERE h.IdPatologia = {0}",
                 idPatologia))) > 0;
         }
         public static void EliminarPatologia(int idPatologia)

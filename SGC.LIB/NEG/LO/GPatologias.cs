@@ -80,7 +80,7 @@ namespace NUT.LIB.NEG.LO
             }   
             using (TransactionScope ts = new TransactionScope())
             {
-                DPatologias.EliminarPatologia(idPatologia);
+                Eliminar(new Patologia { Id = idPatologia });
                 ts.Complete();
             }
         }

@@ -50,11 +50,16 @@ namespace NUT.LIB.NEG.LO
         #region Transacciones
 
         public static void RegistrarPatologia(Patologia ePatologia)
-        {          
+        {
+            DateTime ahora = DateTime.Now;
             if (ExisteNombreUsuario(ePatologia.Nombre, ePatologia.Id.Value))
             {
                 throw new LogicaException("La nombre especificado ya pertenece a otra Patologia", "NombreExistente");
             }
+            ePatologia.IdUsuReg = usr.Id;
+            ePatologia.FecReg = ahora;
+            ePatologia.IdUsuMod = usr.Id;
+            ePatologia.FecMod = ahora;
             using (TransactionScope ts = new TransactionScope())
             {
                 Insertar(ePatologia);
@@ -62,14 +67,17 @@ namespace NUT.LIB.NEG.LO
             }
         }
         public static void ModificarPatologia(Patologia ePatologia)
-        {            
+        {
+            DateTime ahora = DateTime.Now;
             if (ExisteNombreUsuario("Nombre", ePatologia.Id.Value))
             {
                 throw new LogicaException("La nombre especificado ya pertenece a otra Patologia", "NombreExistente");
             }
+            ePatologia.IdUsuMod = usr.Id;
+            ePatologia.FecMod = ahora;
             using (TransactionScope ts = new TransactionScope())
             {
-                Modificar(ePatologia);
+                Modificar(ePatologia, "IdUsuReg", "FecReg");
                 ts.Complete();
             }
         }

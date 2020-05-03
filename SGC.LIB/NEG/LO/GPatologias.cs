@@ -36,7 +36,7 @@ namespace NUT.LIB.NEG.LO
         #endregion
 
         #region Verificaciones
-        public static bool ExisteNombreUsuario(string nombre, int idPatologia)
+        public static bool ExisteNombrePatologia(string nombre, int idPatologia)
         {
             return DPatologias.ExisteNombrePatologia(nombre, idPatologia);
         }
@@ -52,7 +52,7 @@ namespace NUT.LIB.NEG.LO
         public static void RegistrarPatologia(Patologia ePatologia)
         {
             DateTime ahora = DateTime.Now;
-            if (ExisteNombreUsuario(ePatologia.Nombre, ePatologia.Id.Value))
+            if (ExisteNombrePatologia(ePatologia.Nombre, ePatologia.Id.Value))
             {
                 throw new LogicaException("El nombre especificado ya pertenece a otra Patologia", "NombreExistente");
             }
@@ -69,7 +69,7 @@ namespace NUT.LIB.NEG.LO
         public static void ModificarPatologia(Patologia ePatologia)
         {
             DateTime ahora = DateTime.Now;
-            if (ExisteNombreUsuario(ePatologia.Nombre, ePatologia.Id.Value))
+            if (ExisteNombrePatologia(ePatologia.Nombre, ePatologia.Id.Value))
             {
                 throw new LogicaException("El nombre especificado ya pertenece a otra Patologia", "NombreExistente");
             }

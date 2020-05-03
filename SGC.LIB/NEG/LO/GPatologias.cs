@@ -69,7 +69,7 @@ namespace NUT.LIB.NEG.LO
         public static void ModificarPatologia(Patologia ePatologia)
         {
             DateTime ahora = DateTime.Now;
-            if (ExisteNombreUsuario("Nombre", ePatologia.Id.Value))
+            if (ExisteNombreUsuario(ePatologia.Nombre, ePatologia.Id.Value))
             {
                 throw new LogicaException("El nombre especificado ya pertenece a otra Patologia", "NombreExistente");
             }

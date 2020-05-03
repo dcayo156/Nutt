@@ -54,7 +54,7 @@ namespace NUT.LIB.NEG.LO
             DateTime ahora = DateTime.Now;
             if (ExisteNombreUsuario(ePatologia.Nombre, ePatologia.Id.Value))
             {
-                throw new LogicaException("La nombre especificado ya pertenece a otra Patologia", "NombreExistente");
+                throw new LogicaException("El nombre especificado ya pertenece a otra Patologia", "NombreExistente");
             }
             ePatologia.IdUsuReg = usr.Id;
             ePatologia.FecReg = ahora;
@@ -71,7 +71,7 @@ namespace NUT.LIB.NEG.LO
             DateTime ahora = DateTime.Now;
             if (ExisteNombreUsuario("Nombre", ePatologia.Id.Value))
             {
-                throw new LogicaException("La nombre especificado ya pertenece a otra Patologia", "NombreExistente");
+                throw new LogicaException("El nombre especificado ya pertenece a otra Patologia", "NombreExistente");
             }
             ePatologia.IdUsuMod = usr.Id;
             ePatologia.FecMod = ahora;

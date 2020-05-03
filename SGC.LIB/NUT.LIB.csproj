@@ -67,7 +67,7 @@
     <Compile Include="NEG\LO\GCondicionesNoPatologicas.cs" />
     <Compile Include="NEG\LO\GPatologias.cs" />
     <Compile Include="NEG\SF\FPatologias.cs" />
-    <Compile Include="NEG\SF\GCondicionesNoPatologicas.cs" />
+    <Compile Include="NEG\SF\FCondicionesNoPatologicas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VersionadoAssemblyInfo.cs" />
   </ItemGroup>

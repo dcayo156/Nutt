@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace NUT.LIB.NEG.SF
 {
-  public  class GCondicionesNoPatologicas
+  public  class FCondicionesNoPatologicas
     {
-        public string nombre { get; set; }
-        public int estado   { get; set; }
+        public string Nombre { get; set; }
+        public int Estado   { get; set; }
         public string CargarEnHistoriaClinica { get; set; }
     }
 }

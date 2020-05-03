@@ -59,9 +59,12 @@
     <Compile Include="GEN\LO\GParametros.cs" />
     <Compile Include="GEN\LO\GUsuarios.cs" />
     <Compile Include="GEN\SF\FilterUsuarios.cs" />
+    <Compile Include="NEG\AD\DCondicionesNoPatologicas.cs" />
     <Compile Include="NEG\AD\DPatologias.cs" />
+    <Compile Include="NEG\EN\CondicionNoPatologica.cs" />
     <Compile Include="NEG\EN\Constantes.cs" />
     <Compile Include="NEG\EN\Patologia.cs" />
+    <Compile Include="NEG\LO\GCondicionesNoPatologicas.cs" />
     <Compile Include="NEG\LO\GPatologias.cs" />
     <Compile Include="NEG\SF\FPatologias.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

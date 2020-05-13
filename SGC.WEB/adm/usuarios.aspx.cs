@@ -70,7 +70,7 @@ namespace NUT.WEB.adm
                 int cantidadPaginas = Utils.Varios.PaginarDataTable(tUsuarios, pagina);
                 return new
                 {
-                    Patologias = from rUsuario in tUsuarios.AsEnumerable()
+                    Usuarios = from rUsuario in tUsuarios.AsEnumerable()
                                select new
                                {
                                    Id = rUsuario.Field<int>("Id"),

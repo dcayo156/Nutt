@@ -125,7 +125,7 @@ namespace NUT.LIB.GEN.LO
 
         public static void RegistrarUsuario(Usuario eUsuario, string[] lFunciones)
         {
-            DateTime ahora = DateTime.Now;
+            DateTime ahora = DateTime.Now.ToUniversalTime();
 
             if (ExisteCuentaUsuario(eUsuario.Cuenta, eUsuario.Id.Value))
             {
@@ -150,7 +150,7 @@ namespace NUT.LIB.GEN.LO
 
         public static void ModificarUsuario(Usuario eUsuario, string[] lFunciones)
         {
-            DateTime ahora = DateTime.Now;
+            DateTime ahora = DateTime.Now.ToUniversalTime();
 
             if (ExisteCuentaUsuario(eUsuario.Cuenta, eUsuario.Id.Value))
             {

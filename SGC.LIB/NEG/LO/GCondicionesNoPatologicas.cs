@@ -51,7 +51,7 @@ namespace NUT.LIB.NEG.LO
 
         public static void RegistrarCondicionNoPatologica(CondicionNoPatologica eCondicionNoPatologica)
         {
-            DateTime ahora = DateTime.Now;
+            DateTime ahora = DateTime.Now.ToUniversalTime();
             if (ExisteNombreCondicionNoPatologica(eCondicionNoPatologica.Nombre, eCondicionNoPatologica.Id.Value))
             {
                 throw new LogicaException("El nombre especificado ya pertenece a otra Condición no Patologica", "NombreExistente");
@@ -68,7 +68,7 @@ namespace NUT.LIB.NEG.LO
         }
         public static void ModificarCondicionNoPatologica(CondicionNoPatologica eCondicionNoPatologica)
         {
-            DateTime ahora = DateTime.Now;
+            DateTime ahora = DateTime.Now.ToUniversalTime();
             if (ExisteNombreCondicionNoPatologica(eCondicionNoPatologica.Nombre, eCondicionNoPatologica.Id.Value))
             {
                 throw new LogicaException("El nombre especificado ya pertenece a otra Condición no Patologica", "NombreExistente");

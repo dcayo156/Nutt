@@ -51,7 +51,7 @@ namespace NUT.LIB.NEG.LO
 
         public static void RegistrarPatologia(Patologia ePatologia)
         {
-            DateTime ahora = DateTime.Now;
+            DateTime ahora = DateTime.Now.ToUniversalTime();
             if (ExisteNombrePatologia(ePatologia.Nombre, ePatologia.Id.Value))
             {
                 throw new LogicaException("El nombre especificado ya pertenece a otra Patologia", "NombreExistente");
@@ -68,7 +68,7 @@ namespace NUT.LIB.NEG.LO
         }
         public static void ModificarPatologia(Patologia ePatologia)
         {
-            DateTime ahora = DateTime.Now;
+            DateTime ahora = DateTime.Now.ToUniversalTime();
             if (ExisteNombrePatologia(ePatologia.Nombre, ePatologia.Id.Value))
             {
                 throw new LogicaException("El nombre especificado ya pertenece a otra Patologia", "NombreExistente");

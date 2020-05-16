@@ -121,6 +121,13 @@
     <Compile Include="limite_usuario.aspx.designer.cs">
       <DependentUpon>limite_usuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="par\condiciones_no_patologicas.aspx.cs">
+      <DependentUpon>condiciones_no_patologicas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="par\condiciones_no_patologicas.aspx.designer.cs">
+      <DependentUpon>condiciones_no_patologicas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="par\patologias.aspx.cs">
       <DependentUpon>patologias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -210,6 +217,7 @@
     <Content Include="ingreso.aspx" />
     <Content Include="inicio.aspx" />
     <Content Include="limite_usuario.aspx" />
+    <Content Include="par\condiciones_no_patologicas.aspx" />
     <Content Include="par\patologias.aspx" />
     <Content Include="scripts\comunes\alertify.js" />
     <Content Include="scripts\comunes\fine-uploader.core.js" />
@@ -222,6 +230,7 @@
     <Content Include="scripts\comunes\Plantilla.master.js" />
     <Content Include="scripts\comunes\spectrum.js" />
     <Content Include="scripts\comunes\xpectro.js" />
+    <Content Include="scripts\ref\par_condiciones_no_patologicas.aspx.js" />
     <Content Include="scripts\ref\par_patologias.aspx.js" />
     <Content Include="scripts\ref\chart.js" />
     <Content Include="scripts\ref\adm_usuario.aspx.js" />
